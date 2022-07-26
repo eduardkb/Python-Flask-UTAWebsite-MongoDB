@@ -10,6 +10,7 @@ from flask_restx import Api
 api = Api()
 
 app = Flask(__name__)
+application = app
 app.config.from_object(Config)
 
 db = MongoEngine()
