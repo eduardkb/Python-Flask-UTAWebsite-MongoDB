@@ -10,8 +10,20 @@ from flask_restx import Api
 api = Api()
 
 app = Flask(__name__)
+
+#for it to work in AWS:
 application = app
+
 app.config.from_object(Config)
+
+# configure external mongoDB
+# app.config["MONGODB_HOST"] = 'alex.mongohq.com/app12345678'
+# app.config["MONGODB_PORT"] = 10043
+# app.config["MONGODB_DATABASE"] = 'dbname'
+# app.config["MONGODB_USERNAME"] = 'user'
+# app.config["MONGODB_PASSWORD"] = 'password'
+# db = MongoEngine(app)
+
 
 db = MongoEngine()
 db.init_app(app)
