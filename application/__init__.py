@@ -16,7 +16,7 @@ db = MongoEngine()
 db.init_app(app)
 
 # initialize api variable
-api.init_app(app)
+# api.init_app(app)
 
 
 from application import routes
