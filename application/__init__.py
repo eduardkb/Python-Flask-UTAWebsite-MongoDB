@@ -16,14 +16,14 @@ application = app
 
 app.config.from_object(Config)
 
-# configure external mongoDB
-# app.config["MONGODB_HOST"] = 'alex.mongohq.com/app12345678'
-# app.config["MONGODB_PORT"] = 10043
-# app.config["MONGODB_DATABASE"] = 'dbname'
-# app.config["MONGODB_USERNAME"] = 'user'
-# app.config["MONGODB_PASSWORD"] = 'password'
-# db = MongoEngine(app)
-
+# mongo db config strin
+app.config['MONGODB_SETTINGS'] = {
+    'db': 'UTA_Enrollment',
+    'host': '44.204.180.248',
+    'port': 27017,
+    'username':'academydemo',
+    'password':'Ac@demy1234'
+}
 
 db = MongoEngine()
 db.init_app(app)
