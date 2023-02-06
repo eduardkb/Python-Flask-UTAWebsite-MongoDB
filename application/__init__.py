@@ -22,7 +22,7 @@ app.config['MONGODB_SETTINGS'] = {
     'host': '44.201.196.99',
     'port': 27017,
     'username':'academydemo',
-    'password':'Ac@demy1234'
+    'password':'Academy1234'
 }
 
 db = MongoEngine()
