@@ -25,13 +25,26 @@ MONGODB
         systemctl status mongod     
 
     enable security and create new user on mongo db following
-    instructions on site above        
-        user: "mongouser"
-        pwd: "m0ng0U$er"
+    
+    Creating user:
+    $ mongosh
+    $ use admin
+    $ db.createUser(
+    {
+        user: "academydemo",
+        //pwd: passwordPrompt(), // or cleartext password
+        pwd: "Academy1234",
+        roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]
+    })
+    $ exit
+    $ mongosh -u academydemo -p "Academy1234"
+
+
+        user: "academydemo"
+        pwd: "Academy1234"
     to test connection
         mongo --port 27017 --authenticationDatabase "admin" -u "mongouser" -p
-    to quit
-        quit()
+
 
     Install mongo for flask
         $ pip install flask-mongoengine

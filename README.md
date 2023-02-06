@@ -1,4 +1,4 @@
-# Python - UTA Website with MontoDB
+# Python Flask - UTA Website with MontoDB
 
 ## Description
     - CRUD website with MongoDB database
@@ -7,8 +7,15 @@
     - create venv inside project dir
         python -m venv venv
     - activate venv
-        .\venv\Scripts\activate
+        Win:
+            .\venv\Scripts\activate
+        Linux:
+            source venv/bin/activate            
+            deactivate (to deactivate)
     - install requirements
         pip install -r requirements.txt
-    - initiate django server
-        python main.py runserver
+    - initiate flask server
+        flask run
+
+## WebPage User ID
+    - john:john1234
