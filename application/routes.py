@@ -222,7 +222,7 @@ def user():
 
 #region API
 
-# for API, decorate with engApi created in __ini__.py intead of app decorator
+# for API, decorate with engApi created in __ini__.py instead of app decorator
 # name is different to not conflict with app.
 @api.route('/api/users')
 class GetAndPost(Resource):

@@ -1,7 +1,6 @@
-Passwords on mongodb
-    eduard@uta.edu | eduard1234
-    laysa@uta.edu  | laysa1234
-    polly@uta.edu  | polly1234
+ToDo:
+    Research how to make api's work together with the app
+
 ===================================================
 
 1 - create a app folder (any name)
@@ -12,38 +11,25 @@ Passwords on mongodb
 3 - transition routing to application/routes.py file.
 
 MONGODB
-    Install: https://www.linuxcapable.com/pt/how-to-install-mongodb-5-0-on-debian-11-bullseye/
-    Steps:
-        $ sudo apt install dirmngr gnupg apt-transport-https software-properties-common ca-certificates curl -y
-        sudo wget -O- https://www.mongodb.org/static/pgp/server-5.0.asc | gpg --dearmor | sudo tee /usr/share/keyrings/mongodb.gpg
-        echo 'deb [signed-by=/usr/share/keyrings/mongodb.gpg] http://repo.mongodb.org/apt/debian buster/mongodb-org/5.0 main' | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
-        sudo apt-get update
-        sudo apt install mongodb-org
-        sudo systemctl enable mongod --now
-        mongo --eval 'db.runCommand({ connectionStatus: 1 })'
-        sudo systemctl enable mongod
-        systemctl status mongod     
-
-    enable security and create new user on mongo db following
+    - Create user
+        $ mongosh
+        $ use admin
+        $ db.createUser(
+        {
+            user: "academydemo",
+            //pwd: passwordPrompt(), // or cleartext password
+            pwd: "Academy1234",
+            roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]
+        })
+        $ exit
     
-    Creating user:
-    $ mongosh
-    $ use admin
-    $ db.createUser(
-    {
-        user: "academydemo",
-        //pwd: passwordPrompt(), // or cleartext password
-        pwd: "Academy1234",
-        roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]
-    })
-    $ exit
-    $ mongosh -u academydemo -p "Academy1234"
+    - login
+        $ mongosh -u academydemo -p "Academy1234"
 
-
-        user: "academydemo"
-        pwd: "Academy1234"
-    to test connection
+    - test connection
         mongo --port 27017 --authenticationDatabase "admin" -u "mongouser" -p
+    - or test with http:
+        http://3.82.202.171:27017/
 
 
     Install mongo for flask
@@ -83,7 +69,7 @@ MONGODB
         select from collection
             $ db.user.find()
         drop collection 
-            $ db.ress.drop()
+            $ db.user.drop()
 
     Configure DB for use on flask on files 
         config.py

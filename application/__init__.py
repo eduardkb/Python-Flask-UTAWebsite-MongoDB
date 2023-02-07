@@ -19,7 +19,7 @@ app.config.from_object(Config)
 # mongo db config strin
 app.config['MONGODB_SETTINGS'] = {
     'db': 'UTA_Enrollment',
-    'host': '44.201.196.99',
+    'host': '3.82.202.171',
     'port': 27017,
     'username':'academydemo',
     'password':'Academy1234'
@@ -28,6 +28,7 @@ app.config['MONGODB_SETTINGS'] = {
 db = MongoEngine()
 db.init_app(app)
 
+# UNCOMMENT TO MAKE API's WORK
 # initialize api variable
 # api.init_app(app)
 
