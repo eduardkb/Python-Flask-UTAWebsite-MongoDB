@@ -1,4 +1,4 @@
-# Python Flask - UTA Website with MontoDB
+# Python Flask - UTA Website with MongoDB
 
 ## Description
 

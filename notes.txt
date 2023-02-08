@@ -18,13 +18,13 @@ MONGODB
         {
             user: "academydemo",
             //pwd: passwordPrompt(), // or cleartext password
-            pwd: "Academy1234",
+            pwd: "XXXXXX",
             roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]
         })
         $ exit
     
     - login
-        $ mongosh -u academydemo -p "Academy1234"
+        $ mongosh -u academydemo -p "xxxxxx"
 
     - test connection
         mongo --port 27017 --authenticationDatabase "admin" -u "mongouser" -p
