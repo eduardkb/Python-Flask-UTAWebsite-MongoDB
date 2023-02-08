@@ -19,6 +19,9 @@
             deactivate (to deactivate)
     - install requirements
         pip install -r requirements.txt
+    - Change IP address and DB data
+	change public IP address of the MongoDB server 
+	on file application/__init__.py
     - initiate flask server
         flask run
         or

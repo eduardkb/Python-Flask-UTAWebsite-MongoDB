@@ -19,7 +19,7 @@ app.config.from_object(Config)
 # mongo db config strin
 app.config['MONGODB_SETTINGS'] = {
     'db': 'UTA_Enrollment',
-    'host': '3.82.202.171',
+    'host': '3.92.48.117',
     'port': 27017,
     'username':'academydemo',
     'password':'Academy1234'
