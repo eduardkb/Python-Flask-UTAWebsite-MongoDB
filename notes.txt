@@ -2,6 +2,11 @@ ToDo:
     Research how to make api's work together with the app
 
 ===================================================
+Site User Login
+	john@uta.uni:john1234
+
+
+===================================================
 
 1 - create a app folder (any name)
     app folder contains all application files
