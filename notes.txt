@@ -5,6 +5,99 @@ ToDo:
 Site User Login
 	john@uta.uni:john1234
 
+Backup and Restore DB
+	sudo mongodump --username reactusr --password ReactusrPass1234 --authenticationDatabase admin --db UTA_Enrollment --out MongoDB_Backup
+	sudo mongorestore --username reactusr --password ReactusrPass1234 --authenticationDatabase admin --db UTA_Enrollment --drop MongoDB_Backup/UTA_Enrollment/
+
+Full DB Printout
+................................................................
+db.course.find()
+[
+  {
+    _id: ObjectId("63ebbc7bdf02ec94f33d0865"),
+    courseID: '111',
+    title: 'Python 101',
+    description: 'Learn the basics of Python',
+    credits: 15,
+    term: 'summer 2023'
+  },
+  {
+    _id: ObjectId("63ebbc7bdf02ec94f33d0866"),
+    courseID: '222',
+    title: 'PHP',
+    description: 'Learn PHP',
+    credits: 10,
+    term: 'summer 2023'
+  },
+  {
+    _id: ObjectId("63ebbc7cdf02ec94f33d0867"),
+    courseID: '333',
+    title: 'Python 102',
+    description: 'More advanced Python',
+    credits: 35,
+    term: 'Winter 2022'
+  },
+  {
+    _id: ObjectId("63ebbc7cdf02ec94f33d0868"),
+    courseID: '444',
+    title: 'HTML+CSS 101',
+    description: 'Internet Basics',
+    credits: 5,
+    term: 'summer 2021'
+  },
+  {
+    _id: ObjectId("63ebbc7cdf02ec94f33d0869"),
+    courseID: '555',
+    title: 'Java 103',
+    description: 'Very advanced Java course',
+    credits: 55,
+    term: 'summer 2025'
+  },
+  {
+    _id: ObjectId("63ebbc7ddf02ec94f33d086a"),
+    courseID: '666',
+    title: 'GO',
+    description: 'Initiate your journey with GO',
+    credits: 30,
+    term: 'Fall 2023'
+  }
+]
+................................................................
+db.enrollment.find()
+[
+  {
+    _id: ObjectId("63ebbf130987727abead0b6b"),
+    user_id: 2,
+    courseID: '111'
+  }
+]
+................................................................
+db.enrollment.find()
+[
+  {
+    _id: ObjectId("63ebbf130987727abead0b6b"),
+    user_id: 2,
+    courseID: '111'
+  }
+]
+UTA_Enrollment> db.user.find()
+[
+  {
+    _id: ObjectId("63ebbc7bdf02ec94f33d0864"),
+    name: 'jack',
+    designation: 'Manager',
+    age: 25
+  },
+  {
+    _id: ObjectId("63ebbeff0987727abead0b6a"),
+    user_id: 2,
+    first_name: 'John',
+    last_name: 'Snow',
+    email: 'john@uta.uni',
+    password: 'pbkdf2:sha256:260000$i0NqckaTeEW67IEj$e53152b0413a950ff36959b47254aa9f85b739f28bf1197c44af46fe4a0f6f0f'
+  }
+]
+................................................................
 
 ===================================================
 
